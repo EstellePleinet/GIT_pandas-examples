@@ -38,7 +38,7 @@ print('\n==================================================================\n')
 
 # Show avg ratings movie (groupby + avg)
 avgRatings = cloneDF(mergeRatings)
-avgRatings = mergeRatings.groupby(['movie_id', 'title'])['rating'].mean()
+avgRatings = avgRatings.groupby(['movie_id', 'title'])['rating'].mean()
 print('Avg ratings: \n%s' % avgRatings[:10])
 print('\n==================================================================\n')
 
