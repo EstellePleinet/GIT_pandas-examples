@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'Who ?'
+__author__ = Depouv
 
 import pandas as pd
 import numpy as np
@@ -48,6 +48,14 @@ df_3 = df_3.pivot_table(index=['movie_id', 'title'], values=[
 print('Columns(movie_id + title) to Index and specific functions by values \n%s' %
       df_3[:5])
 print('\n==================================================================\n')
+
+
+# Pivot by specific index, specific values and specific columns, applying a functions
+df_4 = cloneDF(mergeRatings)
+df_4 = df_4.pivot_table(index=['movie_id', 'title'], values=['rating'], columns=['gender'], aggfunc=[np.mean],
+                        fill_value=-1, margins=True)
+print('Columns(movie_id + title) to Index and avg rating applied by gender \n%s' %
+      df_4[:5])
 
 
 # Pivot by specific index, specific values and specific columns, applying a functions
